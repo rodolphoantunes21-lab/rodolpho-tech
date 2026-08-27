@@ -14,7 +14,7 @@
         }
 
         body {
-            background-color: #0a0a0a;
+            background-color: #0d0f12; /* Fundo preto/azulado bem escuro do banner */
             color: #ffffff;
             display: flex;
             flex-direction: column;
@@ -27,22 +27,23 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 5%;
-            background-color: #141414;
-            border-bottom: 1px solid #333;
+            background-color: #14161a;
+            border-bottom: 1px solid #222;
         }
 
         .logo {
             font-size: 24px;
             font-weight: 900;
             letter-spacing: 1px;
+            color: #d4af37; /* Dourado premium */
         }
 
         .logo span {
-            color: #e50914; /* Vermelho estilo streaming */
+            color: #2879ff; /* Azul vibrante do banner */
         }
 
         .btn-whatsapp-top {
-            background-color: #25D366;
+            background-color: #2879ff; /* Botão superior em azul para combinar com o banner */
             color: white;
             text-decoration: none;
             padding: 10px 20px;
@@ -56,7 +57,7 @@
         }
 
         .btn-whatsapp-top:hover {
-            background-color: #1da851;
+            background-color: #1c5bcf;
         }
 
         /* Seção Hero (Chamada Principal) */
@@ -66,7 +67,7 @@
         }
 
         .hero h2 {
-            color: #d4af37;
+            color: #d4af37; /* Dourado do banner */
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -81,11 +82,11 @@
         }
 
         .hero h1 span {
-            color: #e50914;
+            color: #2879ff; /* Azul vibrante */
         }
 
         .hero p {
-            color: #aaaaaa;
+            color: #cccccc;
             font-size: 16px;
             max-width: 600px;
             margin: 0 auto;
@@ -96,27 +97,28 @@
             max-width: 800px;
             width: 90%;
             margin: 0 auto 50px auto;
-            background-color: #141414;
+            background-color: #14161a;
             border-radius: 12px;
-            border: 1px solid #333;
+            border: 1px solid #2a2d35;
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            box-shadow: 0 10px 30px rgba(40, 121, 255, 0.1); /* Sombra azul bem suave */
         }
 
         .chat-header {
-            background-color: #1c1c1c;
+            background-color: #1a1d24;
             padding: 15px 20px;
             display: flex;
             align-items: center;
             gap: 15px;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid #2a2d35;
         }
 
         .avatar {
             width: 40px;
             height: 40px;
-            background-color: #e50914;
+            background-color: #2879ff; /* Fundo do avatar azul vibrante */
             color: white;
             border-radius: 50%;
             display: flex;
@@ -130,12 +132,12 @@
         .status-dot {
             width: 10px;
             height: 10px;
-            background-color: #25D366;
+            background-color: #25D366; /* Mantive o verde só para o online */
             border-radius: 50%;
             position: absolute;
             bottom: 0;
             right: 0;
-            border: 2px solid #1c1c1c;
+            border: 2px solid #1a1d24;
         }
 
         .chat-title h3 {
@@ -167,19 +169,20 @@
         }
 
         .msg.bot {
-            background-color: #2c2c2c;
+            background-color: #22262e;
             align-self: flex-start;
             border-bottom-left-radius: 2px;
         }
 
         .msg.user {
-            background-color: #e50914;
+            background-color: #2879ff; /* Balão do usuário azul elétrico */
+            color: white;
             align-self: flex-end;
             border-bottom-right-radius: 2px;
         }
 
         .msg strong {
-            color: #d4af37;
+            color: #d4af37; /* Textos em negrito no bot ficam Dourados */
         }
 
         .chat-options {
@@ -190,9 +193,9 @@
         }
 
         .option-btn {
-            background-color: #1c1c1c;
+            background-color: #1a1d24;
             color: #ffffff;
-            border: 1px solid #444;
+            border: 1px solid #333a45;
             padding: 12px;
             border-radius: 8px;
             cursor: pointer;
@@ -205,20 +208,27 @@
         }
 
         .option-btn:hover {
-            background-color: #333;
-            border-color: #555;
+            background-color: #2879ff; /* Fica azul ao passar o mouse */
+            border-color: #2879ff;
         }
 
         .cta-whatsapp {
             display: inline-block;
-            background-color: #25D366;
+            background-color: #2879ff; /* Botão de ação principal azul igual o banner */
             color: white;
             text-decoration: none;
-            padding: 10px 15px;
+            padding: 12px 18px;
             border-radius: 8px;
             margin-top: 10px;
             font-weight: bold;
             text-align: center;
+            border: 2px solid transparent;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        .cta-whatsapp:hover {
+            background-color: #1c5bcf;
         }
 
         /* Animação */
@@ -245,9 +255,9 @@
 
     <main>
         <div class="hero">
-            <h2>📺 Streaming Completo</h2>
+            <h2>💎 Programação na palma da mão</h2>
             <h1>TODA A TV,<br>EM UM <span>SÓ LUGAR.</span></h1>
-            <p>Canais, filmes e séries direto na sua TV ou celular. Fale com nosso assistente e comece agora.</p>
+            <p>Canais, filmes e séries em HD/4K. Fale com nosso assistente e comece agora mesmo.</p>
         </div>
 
         <div class="chat-container">
@@ -258,20 +268,20 @@
                 </div>
                 <div class="chat-title">
                     <h3>Black BR - Atendimento</h3>
-                    <p>Online agora — Resposta imediata</p>
+                    <p>Online agora — Suporte 24h</p>
                 </div>
             </div>
             
             <div class="chat-body" id="chatBody">
                 <div class="msg bot">
-                    Olá! Seja bem-vindo à Black BR! 📺<br><br>Tenha toda a programação de canais, filmes e séries direto na sua TV ou celular. Escolha uma opção abaixo para continuar:
+                    Olá! Seja bem-vindo à Black BR! 📺<br><br>Sua programação completa direto na TV ou celular. Escolha uma opção abaixo para continuar:
                 </div>
             </div>
 
             <div class="chat-options" id="chatOptions">
                 <button class="option-btn" onclick="selectOption('teste')">🎁 Solicitar Teste Grátis <span>➔</span></button>
                 <button class="option-btn" onclick="selectOption('planos')">💰 Planos e Valores <span>➔</span></button>
-                <button class="option-btn" onclick="selectOption('aparelhos')">📱 Aparelhos Compatíveis <span>➔</span></button>
+                <button class="option-btn" onclick="selectOption('aparelhos')">📱 Dispositivos Compatíveis <span>➔</span></button>
                 <button class="option-btn" onclick="selectOption('pagamento')">💸 Fazer Pagamento (Pix) <span>➔</span></button>
             </div>
         </div>
@@ -294,27 +304,27 @@
 
             if (option === 'teste') {
                 userText = "🎁 Quero solicitar meu Teste Grátis";
-                botText = "Maravilha! 📱 O seu teste grátis é liberado na hora. Clique no botão abaixo para me chamar no WhatsApp e eu te envio o acesso agora mesmo!";
+                botText = "Maravilha! 🎉 O seu teste grátis é liberado na hora, sem compromisso.<br><br>Clique no botão abaixo para me chamar no WhatsApp e eu te envio o acesso agora mesmo!";
                 whatsappText = "Olá! Quero solicitar meu Teste Grátis da Black BR.";
-                ctaText = "Pedir Teste no WhatsApp";
+                ctaText = "PEÇA SEU TESTE GRÁTIS VIA WHATSAPP";
             } 
             else if (option === 'planos') {
                 userText = "💰 Quero saber os Planos e Valores";
-                botText = "Nosso plano é super completo: 💎 <strong>Plano Completo</strong> com todos os canais, filmes e séries.<br><br>Apenas <strong>R$ 20,00 por mês</strong> ⚡<br><br>Sem antena, sem cabos e sem fidelidade! Para assinar, é só me chamar no WhatsApp no botão abaixo:";
-                whatsappText = "Olá! Gostei do plano de R$ 20,00 e quero assinar a Black BR.";
-                ctaText = "Assinar Plano Agora";
+                botText = "Temos a melhor condição do mercado:<br><br>💎 <strong>Plano Completo com 2 Telas</strong><br>📺 Canais, Filmes e Séries em HD/4K<br><br>Tudo isso por apenas <strong>R$ 20,00/MÊS</strong> ⚡<br><br>Sem antena e sem fidelidade! Para assinar, me chame no botão abaixo:";
+                whatsappText = "Olá! Gostei do Plano Completo de R$ 20,00 e quero assinar a Black BR.";
+                ctaText = "ASSINAR PLANO AGORA";
             }
             else if (option === 'aparelhos') {
                 userText = "📱 Quais são os aparelhos compatíveis?";
-                botText = "O sistema roda direto pela internet! É compatível com:<br><br>📺 <strong>Smart TVs:</strong> Samsung, LG, AOC, Philips<br>📱 <strong>TV Box e Fire Stick:</strong> Qualquer Android TV ou Amazon<br>📱 <strong>Celulares e Tablets:</strong> Android e iPhone (iOS)<br><br>Apps parceiros: Zink Player, Box Player, Vizzion Play, entre outros. Me chame no zap que eu te ajudo a instalar!";
-                whatsappText = "Olá! Preciso de ajuda para instalar o aplicativo no meu aparelho.";
-                ctaText = "Falar com Suporte";
+                botText = "O sistema é 100% via internet! Os dispositivos compatíveis são:<br><br>📺 <strong>Smart TV</strong><br>📦 <strong>TV Box / Fire Stick</strong><br>📱 <strong>Celular e Tablet</strong><br><br>Me chame no zap que eu te ajudo com a instalação rápida!";
+                whatsappText = "Olá! Preciso de ajuda para instalar o aplicativo no meu dispositivo.";
+                ctaText = "FALAR COM O SUPORTE 24H";
             }
             else if (option === 'pagamento') {
                 userText = "💸 Quero fazer o pagamento (Pix)";
-                botText = "Perfeito! Aqui estão os dados para pagamento:<br><br>📲 <strong>Chave Pix (Celular):</strong> 14988106465<br>🏦 <strong>Banco:</strong> Neon 👤<br><strong>Favorecido:</strong> Rodolpho Anastacio Antunes<br><br>Assim que fizer o pagamento, clique no botão abaixo e me envie o comprovante lá no WhatsApp para liberarmos o seu acesso na hora! 🚀";
+                botText = "Perfeito! Aqui estão os dados para pagamento:<br><br>📲 <strong>Chave Pix (Celular):</strong> 14988106465<br>🏦 <strong>Banco:</strong> Neon 👤<br><strong>Favorecido:</strong> Rodolpho Anastacio Antunes<br><br>Assim que fizer o pagamento, clique no botão abaixo e me envie o comprovante lá no WhatsApp para liberarmos o seu acesso em HD/4K! 🚀";
                 whatsappText = "Olá, Rodolpho! Segue o meu comprovante de pagamento do Pix.";
-                ctaText = "Enviar Comprovante no WhatsApp";
+                ctaText = "ENVIAR COMPROVANTE VIA WHATSAPP";
             }
 
             // Adicionar mensagem do usuário
@@ -346,14 +356,14 @@
             
             chatBody.innerHTML = `
                 <div class="msg bot">
-                    Olá! Seja bem-vindo à Black BR! 📺<br><br>Tenha toda a programação de canais, filmes e séries direto na sua TV ou celular. Escolha uma opção abaixo para continuar:
+                    Olá! Seja bem-vindo à Black BR! 📺<br><br>Sua programação completa direto na TV ou celular. Escolha uma opção abaixo para continuar:
                 </div>
             `;
             
             chatOptions.innerHTML = `
                 <button class="option-btn" onclick="selectOption('teste')">🎁 Solicitar Teste Grátis <span>➔</span></button>
                 <button class="option-btn" onclick="selectOption('planos')">💰 Planos e Valores <span>➔</span></button>
-                <button class="option-btn" onclick="selectOption('aparelhos')">📱 Aparelhos Compatíveis <span>➔</span></button>
+                <button class="option-btn" onclick="selectOption('aparelhos')">📱 Dispositivos Compatíveis <span>➔</span></button>
                 <button class="option-btn" onclick="selectOption('pagamento')">💸 Fazer Pagamento (Pix) <span>➔</span></button>
             `;
         }
