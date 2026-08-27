@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black BR - Streaming Completo</title>
+    <style>
+        /* Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Cabeçalho */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: #141414;
+            border-bottom: 1px solid #333;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #e50914; /* Vermelho estilo streaming */
+        }
+
+        .btn-whatsapp-top {
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .btn-whatsapp-top:hover {
+            background-color: #1da851;
+        }
+
+        /* Seção Hero (Chamada Principal) */
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero h2 {
+            color: #d4af37;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #e50914;
+        }
+
+        .hero p {
+            color: #aaaaaa;
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Container do Chatbot */
+        .chat-container {
+            max-width: 800px;
+            width: 90%;
+            margin: 0 auto 50px auto;
+            background-color: #141414;
+            border-radius: 12px;
+            border: 1px solid #333;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-header {
+            background-color: #1c1c1c;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 1px solid #333;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            background-color: #e50914;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 16px;
+            position: relative;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #25D366;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border: 2px solid #1c1c1c;
+        }
+
+        .chat-title h3 {
+            font-size: 16px;
+            margin-bottom: 2px;
+        }
+
+        .chat-title p {
+            font-size: 12px;
+            color: #aaaaaa;
+        }
+
+        .chat-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .msg {
+            max-width: 85%;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 15px;
+            line-height: 1.4;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .msg.bot {
+            background-color: #2c2c2c;
+            align-self: flex-start;
+            border-bottom-left-radius: 2px;
+        }
+
+        .msg.user {
+            background-color: #e50914;
+            align-self: flex-end;
+            border-bottom-right-radius: 2px;
+        }
+
+        .msg strong {
+            color: #d4af37;
+        }
+
+        .chat-options {
+            padding: 15px 20px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option-btn {
+            background-color: #1c1c1c;
+            color: #ffffff;
+            border: 1px solid #444;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            text-align: left;
+            transition: 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .option-btn:hover {
+            background-color: #333;
+            border-color: #555;
+        }
+
+        .cta-whatsapp {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Animação */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsivo */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 32px; }
+            .msg { max-width: 95%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">BLACK<span>BR</span></div>
+        <a href="https://wa.me/5514988106465?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20atendimento." target="_blank" class="btn-whatsapp-top">
+            WhatsApp
+        </a>
+    </header>
+
+    <main>
+        <div class="hero">
+            <h2>📺 Streaming Completo</h2>
+            <h1>TODA A TV,<br>EM UM <span>SÓ LUGAR.</span></h1>
+            <p>Canais, filmes e séries direto na sua TV ou celular. Fale com nosso assistente e comece agora.</p>
+        </div>
+
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="avatar">
+                    BR
+                    <div class="status-dot"></div>
+                </div>
+                <div class="chat-title">
+                    <h3>Black BR - Atendimento</h3>
+                    <p>Online agora — Resposta imediata</p>
+                </div>
+            </div>
+            
+            <div class="chat-body" id="chatBody">
+                <div class="msg bot">
+                    Olá! Seja bem-vindo à Black BR! 📺<br><br>Tenha toda a programação de canais, filmes e séries direto na sua TV ou celular. Escolha uma opção abaixo para continuar:
+                </div>
+            </div>
+
+            <div class="chat-options" id="chatOptions">
+                <button class="option-btn" onclick="selectOption('teste')">🎁 Solicitar Teste Grátis <span>➔</span></button>
+                <button class="option-btn" onclick="selectOption('planos')">💰 Planos e Valores <span>➔</span></button>
+                <button class="option-btn" onclick="selectOption('aparelhos')">📱 Aparelhos Compatíveis <span>➔</span></button>
+                <button class="option-btn" onclick="selectOption('pagamento')">💸 Fazer Pagamento (Pix) <span>➔</span></button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const phone = "5514988106465";
+
+        function selectOption(option) {
+            const chatBody = document.getElementById('chatBody');
+            const chatOptions = document.getElementById('chatOptions');
+            
+            // Esconder botões
+            chatOptions.style.display = 'none';
+
+            let userText = "";
+            let botText = "";
+            let whatsappText = "";
+            let ctaText = "";
+
+            if (option === 'teste') {
+                userText = "🎁 Quero solicitar meu Teste Grátis";
+                botText = "Maravilha! 📱 O seu teste grátis é liberado na hora. Clique no botão abaixo para me chamar no WhatsApp e eu te envio o acesso agora mesmo!";
+                whatsappText = "Olá! Quero solicitar meu Teste Grátis da Black BR.";
+                ctaText = "Pedir Teste no WhatsApp";
+            } 
+            else if (option === 'planos') {
+                userText = "💰 Quero saber os Planos e Valores";
+                botText = "Nosso plano é super completo: 💎 <strong>Plano Completo</strong> com todos os canais, filmes e séries.<br><br>Apenas <strong>R$ 20,00 por mês</strong> ⚡<br><br>Sem antena, sem cabos e sem fidelidade! Para assinar, é só me chamar no WhatsApp no botão abaixo:";
+                whatsappText = "Olá! Gostei do plano de R$ 20,00 e quero assinar a Black BR.";
+                ctaText = "Assinar Plano Agora";
+            }
+            else if (option === 'aparelhos') {
+                userText = "📱 Quais são os aparelhos compatíveis?";
+                botText = "O sistema roda direto pela internet! É compatível com:<br><br>📺 <strong>Smart TVs:</strong> Samsung, LG, AOC, Philips<br>📱 <strong>TV Box e Fire Stick:</strong> Qualquer Android TV ou Amazon<br>📱 <strong>Celulares e Tablets:</strong> Android e iPhone (iOS)<br><br>Apps parceiros: Zink Player, Box Player, Vizzion Play, entre outros. Me chame no zap que eu te ajudo a instalar!";
+                whatsappText = "Olá! Preciso de ajuda para instalar o aplicativo no meu aparelho.";
+                ctaText = "Falar com Suporte";
+            }
+            else if (option === 'pagamento') {
+                userText = "💸 Quero fazer o pagamento (Pix)";
+                botText = "Perfeito! Aqui estão os dados para pagamento:<br><br>📲 <strong>Chave Pix (Celular):</strong> 14988106465<br>🏦 <strong>Banco:</strong> Neon 👤<br><strong>Favorecido:</strong> Rodolpho Anastacio Antunes<br><br>Assim que fizer o pagamento, clique no botão abaixo e me envie o comprovante lá no WhatsApp para liberarmos o seu acesso na hora! 🚀";
+                whatsappText = "Olá, Rodolpho! Segue o meu comprovante de pagamento do Pix.";
+                ctaText = "Enviar Comprovante no WhatsApp";
+            }
+
+            // Adicionar mensagem do usuário
+            chatBody.innerHTML += `<div class="msg user">${userText}</div>`;
+            
+            // Simular "digitando..."
+            setTimeout(() => {
+                const wppLink = `https://wa.me/${phone}?text=${encodeURIComponent(whatsappText)}`;
+                chatBody.innerHTML += `
+                    <div class="msg bot">
+                        ${botText}<br>
+                        <a href="${wppLink}" target="_blank" class="cta-whatsapp">${ctaText}</a>
+                    </div>
+                `;
+                chatBody.scrollTop = chatBody.scrollHeight; // Rolar para baixo
+
+                // Adicionar botão de voltar
+                setTimeout(() => {
+                    chatOptions.innerHTML = `<button class="option-btn" onclick="resetChat()" style="justify-content: center; color: #aaaaaa;">🔄 Ver outras opções</button>`;
+                    chatOptions.style.display = 'flex';
+                }, 1000);
+
+            }, 800);
+        }
+
+        function resetChat() {
+            const chatBody = document.getElementById('chatBody');
+            const chatOptions = document.getElementById('chatOptions');
+            
+            chatBody.innerHTML = `
+                <div class="msg bot">
+                    Olá! Seja bem-vindo à Black BR! 📺<br><br>Tenha toda a programação de canais, filmes e séries direto na sua TV ou celular. Escolha uma opção abaixo para continuar:
+                </div>
+            `;
+            
+            chatOptions.innerHTML = `
+                <button class="option-btn" onclick="selectOption('teste')">🎁 Solicitar Teste Grátis <span>➔</span></button>
+                <button class="option-btn" onclick="selectOption('planos')">💰 Planos e Valores <span>➔</span></button>
+                <button class="option-btn" onclick="selectOption('aparelhos')">📱 Aparelhos Compatíveis <span>➔</span></button>
+                <button class="option-btn" onclick="selectOption('pagamento')">💸 Fazer Pagamento (Pix) <span>➔</span></button>
+            `;
+        }
+    </script>
+</body>
+</html>
