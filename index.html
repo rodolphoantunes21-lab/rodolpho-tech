@@ -3,370 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Black BR - Streaming Completo</title>
+    <title>Rodolpho Antunes - Suporte Técnico e IoT</title>
     <style>
-        /* Estilos Globais */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
-
         body {
-            background-color: #0d0f12; /* Fundo preto/azulado bem escuro do banner */
+            background-color: #121212;
             color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* Cabeçalho */
-        header {
-            display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
-            background-color: #14161a;
-            border-bottom: 1px solid #222;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 900;
-            letter-spacing: 1px;
-            color: #d4af37; /* Dourado premium */
-        }
-
-        .logo span {
-            color: #2879ff; /* Azul vibrante do banner */
-        }
-
-        .btn-whatsapp-top {
-            background-color: #2879ff; /* Botão superior em azul para combinar com o banner */
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.3s;
-        }
-
-        .btn-whatsapp-top:hover {
-            background-color: #1c5bcf;
-        }
-
-        /* Seção Hero (Chamada Principal) */
-        .hero {
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .hero h2 {
-            color: #d4af37; /* Dourado do banner */
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 span {
-            color: #2879ff; /* Azul vibrante */
-        }
-
-        .hero p {
-            color: #cccccc;
-            font-size: 16px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Container do Chatbot */
-        .chat-container {
-            max-width: 800px;
-            width: 90%;
-            margin: 0 auto 50px auto;
-            background-color: #14161a;
-            border-radius: 12px;
-            border: 1px solid #2a2d35;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 10px 30px rgba(40, 121, 255, 0.1); /* Sombra azul bem suave */
-        }
-
-        .chat-header {
-            background-color: #1a1d24;
-            padding: 15px 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            border-bottom: 1px solid #2a2d35;
-        }
-
-        .avatar {
-            width: 40px;
-            height: 40px;
-            background-color: #2879ff; /* Fundo do avatar azul vibrante */
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            font-size: 16px;
-            position: relative;
-        }
-
-        .status-dot {
-            width: 10px;
-            height: 10px;
-            background-color: #25D366; /* Mantive o verde só para o online */
-            border-radius: 50%;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            border: 2px solid #1a1d24;
-        }
-
-        .chat-title h3 {
-            font-size: 16px;
-            margin-bottom: 2px;
-        }
-
-        .chat-title p {
-            font-size: 12px;
-            color: #aaaaaa;
-        }
-
-        .chat-body {
+            margin: 0;
             padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            max-height: 400px;
-            overflow-y: auto;
         }
-
-        .msg {
-            max-width: 85%;
-            padding: 12px 16px;
-            border-radius: 12px;
-            font-size: 15px;
-            line-height: 1.4;
-            animation: fadeIn 0.3s ease-in;
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-top: 30px;
+            border: 3px solid #00adb5;
+            object-fit: cover;
+            background-color: #222;
         }
-
-        .msg.bot {
-            background-color: #22262e;
-            align-self: flex-start;
-            border-bottom-left-radius: 2px;
-        }
-
-        .msg.user {
-            background-color: #2879ff; /* Balão do usuário azul elétrico */
-            color: white;
-            align-self: flex-end;
-            border-bottom-right-radius: 2px;
-        }
-
-        .msg strong {
-            color: #d4af37; /* Textos em negrito no bot ficam Dourados */
-        }
-
-        .chat-options {
-            padding: 15px 20px 20px 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .option-btn {
-            background-color: #1a1d24;
-            color: #ffffff;
-            border: 1px solid #333a45;
-            padding: 12px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 15px;
-            text-align: left;
-            transition: 0.2s;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .option-btn:hover {
-            background-color: #2879ff; /* Fica azul ao passar o mouse */
-            border-color: #2879ff;
-        }
-
-        .cta-whatsapp {
-            display: inline-block;
-            background-color: #2879ff; /* Botão de ação principal azul igual o banner */
-            color: white;
-            text-decoration: none;
-            padding: 12px 18px;
-            border-radius: 8px;
-            margin-top: 10px;
-            font-weight: bold;
+        h1 {
+            margin: 15px 0 5px 0;
+            font-size: 24px;
             text-align: center;
-            border: 2px solid transparent;
-            transition: 0.3s;
+            color: #eeeeee;
+        }
+        p {
+            color: #aaaaaa;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 15px;
+            max-width: 400px;
+        }
+        .link-btn {
+            background-color: #1e1e1e;
+            color: #00adb5;
+            border: 1px solid #00adb5;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 10px 0;
             width: 100%;
+            max-width: 400px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
-
-        .cta-whatsapp:hover {
-            background-color: #1c5bcf;
+        .link-btn:hover {
+            background-color: #00adb5;
+            color: #121212;
+            box-shadow: 0 6px 12px rgba(0, 173, 181, 0.4);
         }
-
-        /* Animação */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Responsivo */
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 32px; }
-            .msg { max-width: 95%; }
+        footer {
+            margin-top: 50px;
+            font-size: 12px;
+            color: #666;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">BLACK<span>BR</span></div>
-        <a href="https://wa.me/5514988106465?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20atendimento." target="_blank" class="btn-whatsapp-top">
-            WhatsApp
-        </a>
-    </header>
+    <!-- A foto puxa automaticamente as iniciais "RA" em um fundo azul, se quiser depois te ensino a por a foto da praia -->
+    <img src="https://ui-avatars.com/api/?name=Rodolpho+Antunes&background=00adb5&color=fff&size=200" alt="Rodolpho Antunes" class="profile-pic">
 
-    <main>
-        <div class="hero">
-            <h2>💎 Programação na palma da mão</h2>
-            <h1>TODA A TV,<br>EM UM <span>SÓ LUGAR.</span></h1>
-            <p>Canais, filmes e séries em HD/4K. Fale com nosso assistente e comece agora mesmo.</p>
-        </div>
+    <h1>Rodolpho Antunes</h1>
+    <p>Estudante de Engenharia Mecatrônica | Soluções práticas em IoT, ESP32 e Design de PCB</p>
 
-        <div class="chat-container">
-            <div class="chat-header">
-                <div class="avatar">
-                    BR
-                    <div class="status-dot"></div>
-                </div>
-                <div class="chat-title">
-                    <h3>Black BR - Atendimento</h3>
-                    <p>Online agora — Suporte 24h</p>
-                </div>
-            </div>
-            
-            <div class="chat-body" id="chatBody">
-                <div class="msg bot">
-                    Olá! Seja bem-vindo à Black BR! 📺<br><br>Sua programação completa direto na TV ou celular. Escolha uma opção abaixo para continuar:
-                </div>
-            </div>
+    <a href="https://wa.me/5514988106465?text=Olá%20Rodolpho!%20Vim%20pelo%20seu%20link.%20Preciso%20de%20ajuda%20com%20um%20código%20para%20ESP32/Arduino." class="link-btn" target="_blank">
+        💻 Depuração de Código ESP32/Arduino
+    </a>
 
-            <div class="chat-options" id="chatOptions">
-                <button class="option-btn" onclick="selectOption('teste')">🎁 Solicitar Teste Grátis <span>➔</span></button>
-                <button class="option-btn" onclick="selectOption('planos')">💰 Planos e Valores <span>➔</span></button>
-                <button class="option-btn" onclick="selectOption('aparelhos')">📱 Dispositivos Compatíveis <span>➔</span></button>
-                <button class="option-btn" onclick="selectOption('pagamento')">💸 Fazer Pagamento (Pix) <span>➔</span></button>
-            </div>
-        </div>
-    </main>
+    <a href="https://wa.me/5514988106465?text=Olá%20Rodolpho!%20Vim%20pelo%20seu%20link.%20Preciso%20de%20ajuda%20para%20desenhar%20ou%20rotear%20uma%20placa%20no%20EasyEDA." class="link-btn" target="_blank">
+        ⚙️ Design e Roteamento PCB (EasyEDA)
+    </a>
 
-    <script>
-        const phone = "5514988106465";
+    <a href="https://wa.me/5514988106465?text=Olá%20Rodolpho!%20Vim%20pelo%20seu%20link.%20Preciso%20de%20auxílio%20para%20fabricar%20minha%20placa%20na%20JLCPCB." class="link-btn" target="_blank">
+        🇨🇳 Assessoria para Fabricação na China
+    </a>
 
-        function selectOption(option) {
-            const chatBody = document.getElementById('chatBody');
-            const chatOptions = document.getElementById('chatOptions');
-            
-            // Esconder botões
-            chatOptions.style.display = 'none';
+    <a href="https://wa.me/5514988106465?text=Olá%20Rodolpho!%20Vim%20pelo%20seu%20link.%20Preciso%20de%20ajuda%20com%20um%20projeto%20de%20IoT%20ou%20Automação." class="link-btn" target="_blank">
+        📶 Projetos Práticos de IoT e Automação
+    </a>
 
-            let userText = "";
-            let botText = "";
-            let whatsappText = "";
-            let ctaText = "";
+    <footer>
+        Bauru, SP - Atendimento para todo o Brasil
+    </footer>
 
-            if (option === 'teste') {
-                userText = "🎁 Quero solicitar meu Teste Grátis";
-                botText = "Maravilha! 🎉 O seu teste grátis é liberado na hora, sem compromisso.<br><br>Clique no botão abaixo para me chamar no WhatsApp e eu te envio o acesso agora mesmo!";
-                whatsappText = "Olá! Quero solicitar meu Teste Grátis da Black BR.";
-                ctaText = "PEÇA SEU TESTE GRÁTIS VIA WHATSAPP";
-            } 
-            else if (option === 'planos') {
-                userText = "💰 Quero saber os Planos e Valores";
-                botText = "Temos a melhor condição do mercado:<br><br>💎 <strong>Plano Completo com 2 Telas</strong><br>📺 Canais, Filmes e Séries em HD/4K<br><br>Tudo isso por apenas <strong>R$ 20,00/MÊS</strong> ⚡<br><br>Sem antena e sem fidelidade! Para assinar, me chame no botão abaixo:";
-                whatsappText = "Olá! Gostei do Plano Completo de R$ 20,00 e quero assinar a Black BR.";
-                ctaText = "ASSINAR PLANO AGORA";
-            }
-            else if (option === 'aparelhos') {
-                userText = "📱 Quais são os aparelhos compatíveis?";
-                botText = "O sistema é 100% via internet! Os dispositivos compatíveis são:<br><br>📺 <strong>Smart TV</strong><br>📦 <strong>TV Box / Fire Stick</strong><br>📱 <strong>Celular e Tablet</strong><br><br>Me chame no zap que eu te ajudo com a instalação rápida!";
-                whatsappText = "Olá! Preciso de ajuda para instalar o aplicativo no meu dispositivo.";
-                ctaText = "FALAR COM O SUPORTE 24H";
-            }
-            else if (option === 'pagamento') {
-                userText = "💸 Quero fazer o pagamento (Pix)";
-                botText = "Perfeito! Aqui estão os dados para pagamento:<br><br>📲 <strong>Chave Pix (Celular):</strong> 14988106465<br>🏦 <strong>Banco:</strong> Neon 👤<br><strong>Favorecido:</strong> Rodolpho Anastacio Antunes<br><br>Assim que fizer o pagamento, clique no botão abaixo e me envie o comprovante lá no WhatsApp para liberarmos o seu acesso em HD/4K! 🚀";
-                whatsappText = "Olá, Rodolpho! Segue o meu comprovante de pagamento do Pix.";
-                ctaText = "ENVIAR COMPROVANTE VIA WHATSAPP";
-            }
-
-            // Adicionar mensagem do usuário
-            chatBody.innerHTML += `<div class="msg user">${userText}</div>`;
-            
-            // Simular "digitando..."
-            setTimeout(() => {
-                const wppLink = `https://wa.me/${phone}?text=${encodeURIComponent(whatsappText)}`;
-                chatBody.innerHTML += `
-                    <div class="msg bot">
-                        ${botText}<br>
-                        <a href="${wppLink}" target="_blank" class="cta-whatsapp">${ctaText}</a>
-                    </div>
-                `;
-                chatBody.scrollTop = chatBody.scrollHeight; // Rolar para baixo
-
-                // Adicionar botão de voltar
-                setTimeout(() => {
-                    chatOptions.innerHTML = `<button class="option-btn" onclick="resetChat()" style="justify-content: center; color: #aaaaaa;">🔄 Ver outras opções</button>`;
-                    chatOptions.style.display = 'flex';
-                }, 1000);
-
-            }, 800);
-        }
-
-        function resetChat() {
-            const chatBody = document.getElementById('chatBody');
-            const chatOptions = document.getElementById('chatOptions');
-            
-            chatBody.innerHTML = `
-                <div class="msg bot">
-                    Olá! Seja bem-vindo à Black BR! 📺<br><br>Sua programação completa direto na TV ou celular. Escolha uma opção abaixo para continuar:
-                </div>
-            `;
-            
-            chatOptions.innerHTML = `
-                <button class="option-btn" onclick="selectOption('teste')">🎁 Solicitar Teste Grátis <span>➔</span></button>
-                <button class="option-btn" onclick="selectOption('planos')">💰 Planos e Valores <span>➔</span></button>
-                <button class="option-btn" onclick="selectOption('aparelhos')">📱 Dispositivos Compatíveis <span>➔</span></button>
-                <button class="option-btn" onclick="selectOption('pagamento')">💸 Fazer Pagamento (Pix) <span>➔</span></button>
-            `;
-        }
-    </script>
 </body>
 </html>
