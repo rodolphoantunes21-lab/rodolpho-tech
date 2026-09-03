@@ -5,93 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rodolpho Antunes - Suporte Técnico e IoT</title>
     <style>
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0;
-            padding: 20px;
-        }
-        .profile-pic {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin-top: 30px;
-            border: 3px solid #00adb5;
-            object-fit: cover;
-            background-color: #222;
-        }
-        h1 {
-            margin: 15px 0 5px 0;
-            font-size: 24px;
-            text-align: center;
-            color: #eeeeee;
-        }
-        p {
-            color: #aaaaaa;
-            margin-bottom: 30px;
-            text-align: center;
-            font-size: 15px;
-            max-width: 400px;
-        }
-        .link-btn {
-            background-color: #1e1e1e;
-            color: #00adb5;
-            border: 1px solid #00adb5;
-            border-radius: 8px;
-            padding: 16px 20px;
-            margin: 10px 0;
-            width: 100%;
-            max-width: 400px;
-            text-decoration: none;
-            text-align: center;
-            font-size: 16px;
-            font-weight: bold;
-            transition: 0.3s;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
-        .link-btn:hover {
-            background-color: #00adb5;
-            color: #121212;
-            box-shadow: 0 6px 12px rgba(0, 173, 181, 0.4);
-        }
-        footer {
-            margin-top: 50px;
-            font-size: 12px;
-            color: #666;
-            text-align: center;
-        }
+        body { background-color: #121212; color: #ffffff; font-family: 'Segoe UI', Tahoma, sans-serif; display: flex; flex-direction: column; align-items: center; margin: 0; padding: 20px; }
+        .profile-pic { width: 120px; height: 120px; border-radius: 50%; margin-top: 30px; border: 3px solid #00adb5; object-fit: cover; }
+        h1 { margin: 15px 0 5px 0; font-size: 24px; text-align: center; color: #eeeeee; }
+        p { color: #aaaaaa; margin-bottom: 30px; text-align: center; font-size: 15px; max-width: 400px; }
+        .menu-container { display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 400px; }
+        .hidden { display: none !important; }
+        .link-btn { background-color: #1e1e1e; color: #00adb5; border: 1px solid #00adb5; border-radius: 8px; padding: 16px 20px; margin: 8px 0; width: 100%; text-decoration: none; text-align: center; font-size: 15px; font-weight: bold; cursor: pointer; transition: 0.3s; box-sizing: border-box; }
+        .link-btn:hover { background-color: #00adb5; color: #121212; }
+        .back-btn { background-color: #333; color: #fff; border: none; font-size: 14px; margin-bottom: 15px; }
+        .submenu-title { font-size: 18px; color: #00adb5; margin-bottom: 15px; text-align: center; }
+        footer { margin-top: 50px; font-size: 12px; color: #666; text-align: center; }
     </style>
 </head>
 <body>
 
-    <!-- A foto puxa automaticamente as iniciais "RA" em um fundo azul, se quiser depois te ensino a por a foto da praia -->
-  <img src="perfil.webp" alt="Rodolpho Antunes" class="profile-pic">
+    <img src="perfil.webp" alt="Rodolpho Antunes" class="profile-pic">
     <h1>Rodolpho Antunes</h1>
     <p>Estudante de Engenharia Mecatrônica | Soluções práticas em IoT, ESP32 e Design de PCB</p>
 
-    <a href="https://wa.me/5514988106465?text=Olá%20Rodolpho!%20Vim%20pelo%20seu%20link.%20Preciso%20de%20ajuda%20com%20um%20código%20para%20ESP32/Arduino." class="link-btn" target="_blank">
-        💻 Depuração de Código ESP32/Arduino
-    </a>
+    <!-- MENU PRINCIPAL -->
+    <div id="menu-principal" class="menu-container">
+        <button class="link-btn" onclick="mostrarMenu('sub-codigo')">💻 Depuração de Código ESP32/Arduino</button>
+        <button class="link-btn" onclick="mostrarMenu('sub-pcb')">⚙️ Design e Roteamento PCB (EasyEDA)</button>
+        <button class="link-btn" onclick="mostrarMenu('sub-china')">🇨🇳 Assessoria para Fabricação na China</button>
+        <button class="link-btn" onclick="mostrarMenu('sub-iot')">📶 Projetos Práticos de IoT e Automação</button>
+    </div>
 
-    <a href="https://wa.me/5514988106465?text=Olá%20Rodolpho!%20Vim%20pelo%20seu%20link.%20Preciso%20de%20ajuda%20para%20desenhar%20ou%20rotear%20uma%20placa%20no%20EasyEDA." class="link-btn" target="_blank">
-        ⚙️ Design e Roteamento PCB (EasyEDA)
-    </a>
+    <!-- SUBMENU: CÓDIGO -->
+    <div id="sub-codigo" class="menu-container hidden">
+        <button class="link-btn back-btn" onclick="mostrarMenu('menu-principal')">⬅️ Voltar ao início</button>
+        <h2 class="submenu-title">Como posso ajudar com o código?</h2>
+        <a href="https://wa.me/5514988106465?text=Olá%20Rodolpho!%20Tenho%20uma%20ideia%20e%20preciso%20do%20código%20completo%20do%20início%20ao%20fim." class="link-btn" target="_blank">Preciso do código do início ao fim</a>
+        <a href="https://wa.me/5514988106465?text=Olá%20Rodolpho!%20Já%20tenho%20um%20código,%20mas%20preciso%20de%20melhorias%20ou%20ideias." class="link-btn" target="_blank">Já tenho o código, preciso de melhoria/ideias</a>
+        <a href="https://wa.me/5514988106465?text=Olá%20Rodolpho!%20Meu%20código%20está%20dando%20erro,%20preciso%20de%20ajuda%20para%20depurar." class="link-btn" target="_blank">Meu código está com erro</a>
+    </div>
 
-    <a href="https://wa.me/5514988106465?text=Olá%20Rodolpho!%20Vim%20pelo%20seu%20link.%20Preciso%20de%20auxílio%20para%20fabricar%20minha%20placa%20na%20JLCPCB." class="link-btn" target="_blank">
-        🇨🇳 Assessoria para Fabricação na China
-    </a>
+    <!-- SUBMENU: PCB -->
+    <div id="sub-pcb" class="menu-container hidden">
+        <button class="link-btn back-btn" onclick="mostrarMenu('menu-principal')">⬅️ Voltar ao início</button>
+        <h2 class="submenu-title">Qual a etapa da sua placa?</h2>
+        <a href="https://wa.me/5514988106465?text=Olá%20Rodolpho!%20Preciso%20criar%20o%20roteamento%20e%20esquemático%20desde%20o%20início." class="link-btn" target="_blank">Preciso rotear desde o início</a>
+        <a href="https://wa.me/5514988106465?text=Olá%20Rodolpho!%20Já%20tenho%20o%20esquema%20elétrico,%20preciso%20ajuda%20no%20roteamento." class="link-btn" target="_blank">Já tenho o esquema, falta rotear</a>
+        <a href="https://wa.me/5514988106465?text=Olá%20Rodolpho!%20Minha%20placa%20tá%20desenhada,%20preciso%20revisar%20antes%20de%20fabricar." class="link-btn" target="_blank">Placa desenhada, preciso revisar</a>
+    </div>
 
-    <a href="https://wa.me/5514988106465?text=Olá%20Rodolpho!%20Vim%20pelo%20seu%20link.%20Preciso%20de%20ajuda%20com%20um%20projeto%20de%20IoT%20ou%20Automação." class="link-btn" target="_blank">
-        📶 Projetos Práticos de IoT e Automação
-    </a>
+    <!-- SUBMENU: CHINA -->
+    <div id="sub-china" class="menu-container hidden">
+        <button class="link-btn back-btn" onclick="mostrarMenu('menu-principal')">⬅️ Voltar ao início</button>
+        <h2 class="submenu-title">Fabricação na JLCPCB</h2>
+        <a href="https://wa.me/5514988106465?text=Olá%20Rodolpho!%20Minha%20placa%20está%20pronta,%20preciso%20de%20ajuda%20para%20gerar%20o%20Gerber." class="link-btn" target="_blank">Falta gerar os arquivos Gerber</a>
+        <a href="https://wa.me/5514988106465?text=Olá%20Rodolpho!%20Já%20tenho%20o%20Gerber,%20preciso%20de%20ajuda%20com%20o%20pedido%20na%20China." class="link-btn" target="_blank">Já tenho o Gerber, ajuda com o pedido</a>
+    </div>
+
+    <!-- SUBMENU: IOT -->
+    <div id="sub-iot" class="menu-container hidden">
+        <button class="link-btn back-btn" onclick="mostrarMenu('menu-principal')">⬅️ Voltar ao início</button>
+        <h2 class="submenu-title">Sobre o seu Projeto IoT</h2>
+        <a href="https://wa.me/5514988106465?text=Olá%20Rodolpho!%20Tenho%20um%20projeto%20em%20mente,%20só%20falta%20pôr%20no%20papel%20do%20início%20ao%20fim." class="link-btn" target="_blank">Quero o projeto do início ao fim</a>
+        <a href="https://wa.me/5514988106465?text=Olá%20Rodolpho!%20Já%20tenho%20um%20projeto%20em%20andamento,%20preciso%20de%20uma%20ideia/ajuda." class="link-btn" target="_blank">Projeto em andamento, preciso de ajuda</a>
+    </div>
 
     <footer>
         Bauru, SP - Atendimento para todo o Brasil
     </footer>
+
+    <!-- SCRIPT PARA TROCAR AS TELAS -->
+    <script>
+        function mostrarMenu(idMenu) {
+            document.getElementById('menu-principal').classList.add('hidden');
+            document.getElementById('sub-codigo').classList.add('hidden');
+            document.getElementById('sub-pcb').classList.add('hidden');
+            document.getElementById('sub-china').classList.add('hidden');
+            document.getElementById('sub-iot').classList.add('hidden');
+            
+            document.getElementById(idMenu).classList.remove('hidden');
+        }
+    </script>
 
 </body>
 </html>
